@@ -35,7 +35,7 @@ function buildList() {
     list +=
       '<li class="list-group-item">' +
       tasksList[i] +
-      '<span class="btn-close float-end chiusura" onclick="thisOne= this.parentNode.innerText; elimina();"></span></li>';
+      '<span class="btn-close float-end" onclick="thisOne = this.parentNode.innerText; elimina();"></span></li>';
   }
   // inserisce l'html nella pagina
   listaUL.innerHTML = list;
@@ -46,7 +46,8 @@ function elimina() {
     for(let n = 0; n < tasksList.length; n++) {
         if (tasksList[n] === thisOne) {
             tasksList.splice(n, 1);
-        }        
+        }
+        break        
     }
   buildList();
 }
